@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>ODS + Ciudadanía Digital | Portafolio Interactivo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <!-- Swiper CSS para carruseles profesionales -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+
+    <div class="theme-toggle">
+        <button id="darkModeToggle" class="theme-btn">🌙 Modo oscuro</button>
+    </div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">🌍 Objetivos de <span class="highlight">Desarrollo Sostenible</span></h1>
+            <p class="hero-subtitle">Un llamado universal para poner fin a la pobreza, proteger el planeta y garantizar la paz y prosperidad para 2030</p>
+            <div class="hero-cta">
+                <button class="btn btn-primary" id="exploreBtn">Explorar objetivos →</button>
+                <button class="btn btn-secondary" id="digitalTipsBtn">💡 Consejos huella digital</button>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="currentColor"></path>
+                <path d="M0,0V15.81C13,21.25,27.93,25.67,44.24,28.45c69.76,11.6,136.47,7.22,206.42-8.49,69.22-15.56,134.17-45.65,203-49.91C511.7,9.09,603.24,36.18,688.31,58.7c84,22.33,165.92,32.5,250.37,23.06,34.54-3.86,68.42-12.67,102.93-20.57C1057.57,51.52,1128.74,24.35,1200,0Z" opacity=".5" fill="currentColor"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c119-21.33,235.14-66.47,357.05-63.76C936.83,0,1106.52,45.06,1200,15.86V0Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- CARRUSEL 1: Datos de Ciudadanía Digital -->
+        <section class="carousel-section">
+            <h2 class="section-title">📱 Datos clave sobre <strong>Huella Digital</strong></h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide carousel-card">
+                        <div class="carousel-icon">🌐</div>
+                        <h3>+4.9 mil millones</h3>
+                        <p>de personas usan internet en 2024, generando 2.5 quintillones de bytes de datos diarios.</p>
+                    </div>
+                    <div class="swiper-slide carousel-card">
+                        <div class="carousel-icon">⏱️</div>
+                        <h3>6 segundos</h3>
+                        <p>es el tiempo promedio que una empresa necesita para identificar a un usuario por su huella digital.</p>
+                    </div>
+                    <div class="swiper-slide carousel-card">
+                        <div class="carousel-icon">🔒</div>
+                        <h3>79%</h3>
+                        <p>de los jóvenes no revisa la configuración de privacidad en redes sociales.</p>
+                    </div>
+                    <div class="swiper-slide carousel-card">
+                        <div class="carousel-icon">🗑️</div>
+                        <h3>Derecho al olvido</h3>
+                        <p>En la UE puedes solicitar que eliminen tus datos. ¿En tu país?</p>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <section class="intro">
+            <h2>¿Qué son los <strong>ODS</strong>?</h2>
+            <p>Los Objetivos de Desarrollo Sostenible son 17 metas globales adoptadas por la ONU en 2015 para erradicar la pobreza, proteger el medio ambiente y asegurar la prosperidad para todas las personas antes de 2030. Cada objetivo tiene metas específicas medibles.</p>
+        </section>
+
+        <!-- Barra de búsqueda y contador interactivo -->
+        <div class="interactive-bar">
+            <input type="text" id="searchInput" placeholder="🔍 Buscar ODS por nombre..." class="search-input">
+            <div class="counter-box">
+                <span>📊 ODS explorados: </span>
+                <span id="odsCounter">0</span>
+            </div>
+        </div>
+
+        <section class="ods-grid" id="odsGrid">
+            <!-- Los 17 ODS se inyectarán con JavaScript -->
+        </section>
+    </main>
+
+    <!-- Botón flotante de ciudadanía digital -->
+    <div class="floating-btn" id="floatingTipBtn">
+        <span>💡</span>
+        <span class="tooltip-text">Consejos huella digital</span>
+    </div>
+
+    <!-- Modal de consejos de ciudadanía digital -->
+    <div class="modal-overlay" id="digitalModal">
+        <div class="modal-container">
+            <h3>🛡️ Reduce tu huella digital</h3>
+            <ul class="tips-list">
+                <li>🔐 Usa contraseñas diferentes para cada servicio</li>
+                <li>🌐 Activa la navegación privada/incógnito</li>
+                <li>📱 Revisa la configuración de privacidad cada mes</li>
+                <li>🗑️ Elimina cuentas que ya no uses</li>
+                <li>🔍 Googlea tu nombre para ver qué información pública hay</li>
+            </ul>
+            <button class="close-modal" id="closeDigitalModal">Entendido, gracias</button>
+            <p class="modal-timer">⏱️ Este modal se cerrará automáticamente en <span id="timerSeconds">6</span> segundos</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>💡 Portafolio Digital - Inspirado en la Agenda 2030 + Ciudadanía Digital</p>
+            <p>🌱 Pequeñas acciones, grandes cambios. #ODS #HuellaDigital</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
